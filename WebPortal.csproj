@@ -129,8 +129,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\database.cs" />
-    <Compile Include="Data\OpenAI.cs" />
+    <Compile Include="Services\Databases\AgentDataService.cs" />
+    <Compile Include="Services\Databases\MessageDataService.cs" />
+    <Compile Include="Services\Databases\MilestoneDataService.cs" />
+    <Compile Include="Services\Databases\SQLiteChatStorage.cs" />
+    <Compile Include="Services\OpenAI\OpenAIService.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,7 +141,22 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AgentMetricsModel.cs" />
+    <Compile Include="Models\EnumExtensions.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\MilestoneModel.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\StateEnums.cs" />
+    <Compile Include="Models\TaskModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Databases\ProjectDataService.cs" />
+    <Compile Include="Services\Databases\TaskDataService.cs" />
+    <Compile Include="Services\Managers\AgentManager.cs" />
+    <Compile Include="Services\Managers\ProgressTracker.cs" />
+    <Compile Include="Services\Managers\ProjectManager.cs" />
+    <Compile Include="Services\Managers\TaskManager.cs" />
+    <Compile Include="Services\OpenAI\AITaskHandler.cs" />
+    <Compile Include="Services\OpenAI\PromptBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -151,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
